@@ -1,0 +1,1 @@
+Built Date,Tax SQFT,NbrStories,OccupancyLoad,Residential 4,Institutional 2,Institutional 1,Residential 3,Business,Residential 2,Residential 1,Institutional 4

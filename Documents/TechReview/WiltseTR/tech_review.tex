@@ -1,0 +1,345 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+%\usepackage{caption}
+\graphicspath{ {/} }
+\usepackage{geometry}
+\usepackage{imakeidx}
+\makeindex[columns=1, options=-s lou3.ist]
+\geometry{textheight=9.5in, textwidth=7in}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{   The Visionaries}
+\def \CapstoneTeamNumber{   3}
+\def \GroupMemberOne{     Kien Tran}
+\def \GroupMemberTwo{       Brian Wiltse}
+\def \CapstoneProjectName{    Code3 Visionary}
+\def \CapstoneSponsorCompany{ Levrum Data Technologies}
+\def \CapstoneSponsorPerson{  Carl Niedner}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{    
+        %Requirements Document
+        Technology Review
+        %Design Document
+        %Progress Report
+        }
+      
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil   \makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill    \makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil    \makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill  \makebox[.75in][r]{Date}}}}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+%\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+      \includegraphics[height=4cm]{coe_v_spot1}
+        \hfill 
+        % 4. If you have a logo, use this include graphics command to put it on the cover sheet.
+        %\includegraphics[height=4cm]{CompanyLogo}   
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            \large{Fall Term}\par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            %\CapstoneTeamName\par 
+            \vspace{5pt}
+            {\Large
+                %\NameSigPair{\GroupMemberOne}\par
+                \NameSigPair{\GroupMemberTwo}\par
+            }
+            \vspace{20pt}
+        }
+        \begin{abstract}
+                The Code3 Visionary project will utilize machine learning techniques to predict future patterns of emergency incidents for public safety. 
+                This document includes Brian Wiltse's review of relevant technologies for the project. The discussed technologies are back end programming languages, feature extraction tools, and user interface design.
+        \end{abstract}
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+\clearpage
+
+% 8. now you write!
+\section{Introduction}
+    \subsection{Code3 Visionary}
+    Emergency services experts are constantly looking for ways to improve response to emergencies.
+    Responding effectively to emergency scenarios means getting the appropriate resources and personnel, such as firefighters, paramedics, or police, to the scene in a minimal amount of time.
+    A challenging problem facing command-level personnel in emergency services of all kinds is how to most effectively allocate their resources.
+    
+    Levrum Data Technologies' existing software, Code3 Strategist, allows users to perform what-if analyses for emergency resource allocation.
+    In a what-if analyses, a user can run hypothetical emergency scenarios against custom resource allocation configurations.
+    
+    Code3 Visionary aims take this capability a step further and predict the need for emergency services in a given place and time.
+    This would provide users with the most likely emergency scenarios, against which they can test their current or hypothetical resource allocations in Code3 Strategist.
+    
+    \subsection{My Role}
+    I will be working with my partner, Kien Tran, as well as other employees at Levrum to research and develop all aspects of the Code3 Visionary software.
+    My tasks will include building tools to obtain and extract features from publicly available data, researching and implementing machine learning and artificial intelligence algorithms to develop a predictive model, building an API to get results from the model, and developing a minimal user interface to view the results.
+
+    \subsection{Document Overview}
+    This document explores potential choices for three technologies in Code3 Visionary: the back end programming language, feature extraction tools, and the user interface.
+    Each section describes advantages and disadvantages of each choice, and concludes with our decision and the reasoning behind it.
+    
+\section{Back End Programming Languages}
+    \subsection{Overview}
+    A large part of Code3 Visionary is machine learning and data processing.
+    Levrum has an existing code base that is largely in C\# and C/C++, but another programming language may better suit the needs of the Code3 Visionary project. 
+    \subsection{Criteria}
+    \begin{itemize}
+        \item \textbf{Machine learning library availability.}
+        The programming language we choose must have machine learning libraries available.
+        \item \textbf{Performance.}
+        Machine learning and data processing libraries that are known to be faster are preferable.
+        \item \textbf{Development overhead.}
+        We would like to abstract away a lot of details, such as memory management.
+        \item \textbf{Integrates with existing code base.}
+        Having as few languages in the code base as possible would be ideal.
+    \end{itemize}
+
+    \subsection{Potential Choices}
+    
+        \subsubsection{C/C++}
+        C allows for the most control of details, as it is the lowest-level language out all of the options.
+        However, it also appears to have the fewest options for machine learning algorithm libraries to choose from \cite{MLAlgGit}.
+        Many resources are for 'C/C++', and many libraries are written in C++, indicating that C++ would be preferred to C.
+        
+        Even with C++, low-level details might create unnecessary overhead, however. Akran Chakraborty, writing for the educational site Udacity notes that, for C/C++, the "lack of idiomatic abstractions for data processing and added overhead for memory-management can make it... burdensome for developing complete end-to-end [machine learning] systems" \cite{UdacityChakra}.
+        
+        \subsubsection{C\#}
+        C\# is the language in which most of Levrum's existing code base has been developed.
+        Levrum's code base is also integrated with a .NET framework, for which C\# is an ideal language.
+        However, C\# does not appear to be widely used for machine learning problems.
+        
+        \subsubsection{Python}
+        Though it does not have built-in data processing capabilities, Python "libraries like NumPy, SciPy and Pandas offer equivalent functionality in an arguably more approachable syntax" \cite{UdacityChakra}. 
+        Python also appears to be the most popular language for machine learning, with numerous sources citing its relative ease of use and the large number of resources for reference \cite{ValueWalk} \cite{HackerEarth} \cite{Intellipaat}.
+        Python's well-known and well-tested data science and machine learning libraries are also written in C/C++ to maximize their efficiency.
+    
+    \subsection{Discussion}
+    C/C++ seem to offer little performance advantage over Python, since Python's machine learning libraries are written in C/C++. 
+    Python and C\# would also require less programming overhead in the form of memory management. 
+    
+    Between Python and C\#, Python holds the significant advantage that it is more widely used for machine learning. In addition to being a testament to its overall usefulness, Python's popularity as a machine learning language also means its machine learning libraries are likely among the most well-tested and well-documented.
+    
+        \begin{center}
+        \begin{singlespace}
+        \begin{tabular}{ |p{3cm}|p{4cm}|p{2cm}|p{2cm}|p{4cm}| }
+
+        \hline
+        
+         & \textbf{Machine Learning Library Availability} 
+         & \textbf{Performance}
+         & \textbf{Development Overhead}
+         & \textbf{Integrates with Existing Code Base} \\
+         \hline
+         \textbf{C/C++}
+         & Several libraries available 
+         & High 
+         & High
+         & Yes \\
+         \hline
+         \textbf{C\#} 
+         & Limited libraries available 
+         & High 
+         & Low
+         & Yes \\ 
+         \hline
+        \textbf{Python} 
+        & Several libraries available
+        & High
+        & Low
+        & No \\
+        \hline
+        \end{tabular}
+        \end{singlespace}
+        \end{center}
+    
+    \subsection{Conclusion}
+    We will be implementing the machine learning algorithms in Python because of the availability of resources for reference and the widespread use of the language's data science and machine learning libraries.
+
+    
+\section{Feature Extraction Tools}
+    \subsection{Overview}
+    Feature extraction is the method by which Code3 Visionary will obtain the data used to train the predictive model. 
+    At this time, we have identified the United States Census to be a primary source of data for training Code3 Visionary's machine learning algorithm, and so what is available from the U.S. Census weighs heavily on our decision.
+    That said, several options for extracting features exist.
+    In future iterations of the project, and as more sources of data are identified, more than one method of feature extraction may be needed.
+    This section will serve to explore which tool we will implement on our first iteration of the project.
+    
+    \subsection{Criteria}
+    \begin{itemize}
+        \item \textbf{Availability of data.} Can we obtain a broad range of data using this method?
+        \item \textbf{Maintainability.}  We want to automate this task so new data can be added without user or developer intervention. 
+        \item \textbf{Reusability.}  The tool needs to be applied to various types of data, potentially from various sources. 
+    \end{itemize}
+    
+    \subsection{Potential Choices}
+
+        \subsubsection{Shapefile Processing Libraries}
+        Shapefiles are common formats for describing geospatial data, including location, shape, and attributes. 
+        The U.S. Census has data available in shapefile format, as do various other potential sources, such as the U.S. Geological Survey \cite{USGSRoadData}. Shapefiles have the additional advantage of storing the attributes of an area along with the location, making them ideal for Code3 Visionary's purposes.
+        
+        \subsubsection{Automated API Tools}
+        Another option is to create tools to obtain data from API calls. 
+        We recently worked on a project to obtain data for Charlotte, NC from the United States Census API as an example of how this might work.
+        The U.S. Census API is reasonably well documented, but they do have some inconsistencies in their data sets, such as which codes are designated for what data.
+        This inconsistency may make tools difficult to maintain as changes are made to APIs and more data sets are accessed.
+        
+        A significant drawback of creating API tools is that different APIs will require developers to familiarize themselves with the intricacies of each API. 
+        
+        \subsubsection{CSV File Tools}
+        The U.S. Census also provides data in CSV files. 
+        The CSV files include the data along with geological identification numbers and state and county numbers, which would need to be mapped to their appropriate locations for a given time frame. 
+        Manual mapping of codes to their geographic location would add considerable programming overhead.
+    
+    \subsection{Discussion}
+    The U.S. Census provides data via API calls, CSV Files, and shapefiles, so each of these options fulfill the availability of data criterion.
+    
+    Of all the choices, shapefile tools will require the least maintenance because the data will always be attributed to specific locations.
+    In contrast, obtaining data from CSV files and API calls would involve mapping data to the appropriate locations.
+    Shapefile data will be mapped to the location already, making the tool more maintainable.
+    For the same reason, shapefile tools will also be the most reusable.
+    Having a consistent format for finding the location to which a new type of data applies will allow U.S. to abstract the process of adding new variables to our predictive model.
+    
+    \begin{center}
+    \begin{tabular}{ |c|c|c|c| } 
+    \hline
+     & \textbf{Availability of data} 
+     & \textbf{Maintainability}
+     & \textbf{Reusability} \\
+     \hline
+     \textbf{Shapefile Tools}
+     & High 
+     & High 
+     & High \\
+     \hline
+     \textbf{Automated Census Tools }
+     & High 
+     & Moderate
+     & Moderate \\ 
+     \hline
+     \textbf{CSV File Tools"}
+     & High
+     & Moderate 
+     & Moderate\\
+    \hline
+    \end{tabular}
+    \end{center}
+    
+    \subsection{Conclusion}
+    We will be using shapefile processing tools as our primary feature extraction method because of the maintainability and reusability advantages the shapefile format provides. 
+    In addition, our chosen programming language, Python, has a widely-used shapefile library available \cite{PyShapefile}.
+
+\section{User Interface}
+\subsection{Overview}
+For the first iteration of Code3 Visionary, our implementation of a user interface (UI) will be minimal. 
+However, we do want to ensure that the implementation will provide a foundation for future iterations of an appealing, intuitive user interface.
+
+\subsection{Criteria}
+
+\begin{itemize}
+    \item \textbf{Appeal to users.} 
+    Our application must be desirable and convenient for users.
+    \item \textbf{Code development and maintainability.}
+    We want to make the code easy to maintain and upgrade.
+    \item \textbf{Hosting cost.} Though Code3 Visionary has no hard spending limit, minimizing cost is a good business practice. 
+\end{itemize}
+
+    \subsection{Potential Choices}
+    
+        \subsubsection{Web Browser Application}
+        Browser-based applications do not need to be installed, which many users find advantageous in and of itself. 
+        An additional benefit of not having to install software is that all users will be running the same version of the software.
+        
+        Though developers would only need to debug one version of the software at a time, different browsers, and different versions of the same browser, will often render web applications differently.
+        This means that user experience will likely be inconsistent, and that some bugs will be difficult to reproduce and detect because they might be unique to a specific version of a certain browser.
+        
+        \subsubsection{Standalone Application}
+        The main advantage of standalone applications is that they are consistent interfaces for users.
+        Levrum will have complete control over what is presented to users.
+        In addition, Levrum will not incur a cost to host the application on a server. 
+        
+        Levrum will, however, need to develop the application to run on any operating systems they want to support. Also, as new versions of Code3 Visionary are released, some customers may not want to upgrade right away, if at all. Levrum will likely want to provide support for several versions of the application for multiple operating systems.
+        
+        \subsubsection{Cloud Application}
+        This choice refers to a Windows app run on a cloud server through a browser.
+        An example is Amazon Appstream \cite{AmznAppStream}.
+        A cloud application would include hosting fees, but it would offer a user a consistent user interface.
+        It would also not require the user to install any software on their device.
+        
+    \subsection{Discussion}
+    A consideration for many browser or cloud applications is the security risk transmitting sensitive data between clients and servers.
+    Code3 Visionary will not encounter this problem because it does not need to use sensitive client data to generate its predictive models. 
+    
+    The cost of hosting servers for browser applications is still a factor, however. Hosting a server can be costly when considering the costs of hardware, server operating system and applications, and server administration \cite{ServerCost}.
+    
+    Hosting an application on a cloud server can also be costly. For example, hosting on Amazon Appstream 2.0 with 100 users having 24-hour access to the application would cost around \$92,000 per year. However, this cost would be offset relative to the browser-based application because Levrum would not need IT employees for server administration \cite{AppstreamCost}.
+    
+    Standalone applications, on the other hand, will not involve a server hosting fee. Yet another advantage of standalone applications is that users will be presented with a consistent user interface, whereas user experience in browser-based apps can vary depending on the browser. However, a significant drawback to standalone applications is the need to develop the application to run on different operating systems.
+        \begin{center}
+        \begin{tabular}{ |l|l|l|l|  } 
+        \hline
+        & \textbf{User Appeal}
+        & \shortstack[l]{\textbf{Code Development} \\ 
+        \textbf{and Maintainability}}
+        & \textbf{Hosting Cost} \\
+        \hline
+        \textbf{Web Browser Application}
+        & \shortstack[l]{(+) No installation \\
+         (-) Inconsistent user interface}
+        & \shortstack[l]{(-) Browser compatibility issues\\
+         (+) All users use same version\\
+         (+) Same app for Windows, Mac, Linux}
+        & High \\
+        \hline
+        \textbf{Standalone Application}
+        & \shortstack[l]{(-) Installation required \\
+         (+) Consistent user interface}
+        & \shortstack[l]{(-) Development for each OS \\
+         (+) Need to support multiple versions}
+        & None \\
+        \hline
+        \textbf{Cloud Application}
+        & \shortstack[l]{(+) No installation \\
+         (+) Consistent user interface}
+        & \shortstack[l]{(+) No browser compatibility issues\\
+         (+) All users use same version\\
+         (+) Same app for Windows, Mac, Linux}
+        &  Moderate \\
+        \hline
+        \end{tabular}
+        \end{center}
+    
+    \subsection{Conclusion}
+    We will develop Code3 Visionary as a cloud application. 
+    Although there is a fixed cost for hosting a cloud-based application on a service such as Amazon Appstream, a cloud application offers the significant advantage of being a consistent interface for users and relatively low-maintenance for developers. 
+    The cloud-based application is also likely to be the overall least expensive option, considering Levrum will not need IT employees to host a server as they would in the case of a browser-based application, and they will need fewer programmers to develop and maintain the application than they would if Code3 Visionary were developed as a standalone application. 
+% REFERENCES
+\newpage    
+\bibliography{TechRevRef}{}
+\bibliographystyle{ieeetr}
+
+\end{document}
+

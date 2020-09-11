@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "a8c2de30-32e8-4280-a311-85b522e86ceb",
+		"name": "The Visionary API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Check using the normal get request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "2f2f2581-988e-4ed5-a0d4-6fcb51c32501",
+						"type": "text/javascript",
+						"exec": [
+							"var response= JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"num_entry_b\", response.length);",
+							"",
+							"pm.test(\"Check status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://code3visionary.appspot.com/calls",
+					"protocol": "https",
+					"host": [
+						"code3visionary",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"calls"
+					]
+				},
+				"description": "Check to see if there is anything in the datatable at start"
+			},
+			"response": []
+		},
+		{
+			"name": "Test adding entry",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "aba3ddc1-6226-4dbd-a9eb-05dda087457e",
+						"type": "text/javascript",
+						"exec": [
+							"var entry= JSON.parse(responseBody);",
+							"postman.setGlobalVariable(\"entry_id\", entry.id);",
+							"postman.setGlobalVariable(\"entry_callcount\", entry.callcount);",
+							"postman.setGlobalVariable(\"entry_year\", entry.year);",
+							"postman.setGlobalVariable(\"entry_cause\", entry.cause);",
+							"postman.setGlobalVariable(\"entry_location\", entry.location);",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"cause\":\"test\",\n\t\"year\": 2000,\n\t\"location\": 10001,\n\t\"callcount\": 150\n}"
+				},
+				"url": {
+					"raw": "https://code3visionary.appspot.com/calls",
+					"protocol": "https",
+					"host": [
+						"code3visionary",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"calls"
+					]
+				},
+				"description": "Make a new entry in the Database"
+			},
+			"response": []
+		},
+		{
+			"name": "Check if new entry increase database size",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7e513a8c-e79d-45a1-98dd-cf5d24bbcb8d",
+						"type": "text/javascript",
+						"exec": [
+							"var response= JSON.parse(responseBody);",
+							"len = response.length;",
+							"",
+							"pm.test(\"Check num of entries is bigger\", function () {",
+							"    pm.expect(len).to.be.above(Number(pm.globals.get(\"num_entry_b\")));",
+							"});",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://code3visionary.appspot.com/calls",
+					"protocol": "https",
+					"host": [
+						"code3visionary",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"calls"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check new entry",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "328ede37-f151-41e1-acbc-bdb596e9de06",
+						"type": "text/javascript",
+						"exec": [
+							"var response= JSON.parse(responseBody);",
+							"pm.test(\"Check id\", function () {",
+							"    pm.expect(response.id).to.eql(pm.globals.get(\"entry_id\"));",
+							"});",
+							"pm.test(\"Check cause\", function () {",
+							"    pm.expect(response.cause).to.eql(pm.globals.get(\"entry_cause\"));",
+							"});",
+							"pm.test(\"Check location\", function () {",
+							"    pm.expect(response.location).to.eql(Number(pm.globals.get(\"entry_location\")));",
+							"});",
+							"pm.test(\"Check year\", function () {",
+							"    pm.expect(response.year).to.eql(Number(pm.globals.get(\"entry_year\")));",
+							"});",
+							"pm.test(\"Check callcount\", function () {",
+							"    pm.expect(response.callcount).to.eql(Number(pm.globals.get(\"entry_callcount\")));",
+							"});",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://code3visionary.appspot.com/calls/{{entry_id}}",
+					"protocol": "https",
+					"host": [
+						"code3visionary",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"calls",
+						"{{entry_id}}"
+					]
+				},
+				"description": "Checking the id, cause, location, ... to make sure that the entry is the same given the id as a parameter"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete new entry",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://code3visionary.appspot.com/calls/{{entry_id}}",
+					"protocol": "https",
+					"host": [
+						"code3visionary",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"calls",
+						"{{entry_id}}"
+					]
+				},
+				"description": "Deletes the test entry"
+			},
+			"response": []
+		},
+		{
+			"name": "Check if entry exists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6c701c88-bd52-4153-9422-de194115e961",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});",
+							"",
+							"pm.test(\"Response Message\", function () {",
+							"    pm.response.to.have.body(\"Error: Cannot find call data / call data does not exist\");",
+							"});"
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "https://code3visionary.appspot.com/calls/{{entry_id}}",
+					"protocol": "https",
+					"host": [
+						"code3visionary",
+						"appspot",
+						"com"
+					],
+					"path": [
+						"calls",
+						"{{entry_id}}"
+					]
+				},
+				"description": "Check if deletion really did delete the entry"
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,271 @@
+\documentclass[onecolumn, draftclsnofoot,10pt, compsoc]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{setspace}
+\usepackage{caption}
+\graphicspath{ {/} }
+\usepackage{geometry}
+\usepackage{imakeidx}
+\makeindex[columns=1, options=-s lou3.ist]
+\geometry{textheight=9.5in, textwidth=7in}
+
+% 1. Fill in these details
+\def \CapstoneTeamName{   The Visionaries}
+\def \CapstoneTeamNumber{   3}
+\def \GroupMemberOne{     Kien Tran}
+\def \GroupMemberTwo{       Brian Wiltse}
+\def \CapstoneProjectName{    Code3 Visionary}
+\def \CapstoneSponsorCompany{ Levrum Data Technologies}
+\def \CapstoneSponsorPerson{  Carl Niedner}
+
+% 2. Uncomment the appropriate line below so that the document type works
+\def \DocType{    
+        %Requirements Document
+        % Review
+        %Design Document
+        Progress Report
+        }
+      
+\newcommand{\NameSigPair}[1]{\par
+\makebox[2.75in][r]{#1} \hfil   \makebox[3.25in]{\makebox[2.25in]{\hrulefill} \hfill    \makebox[.75in]{\hrulefill}}
+\par\vspace{-12pt} \textit{\tiny\noindent
+\makebox[2.75in]{} \hfil    \makebox[3.25in]{\makebox[2.25in][r]{Signature} \hfill  \makebox[.75in][r]{Date}}}}
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+% 3. If the document is not to be signed, uncomment the RENEWcommand below
+\renewcommand{\NameSigPair}[1]{#1}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{titlepage}
+    \pagenumbering{gobble}
+    \begin{singlespace}
+      \includegraphics[height=4cm]{coe_v_spot1}
+        \hfill 
+        % 4. If you have a logo, use this include graphics command to put it on the cover sheet.
+        %\includegraphics[height=4cm]{CompanyLogo}   
+        \par\vspace{.2in}
+        \centering
+        \scshape{
+            \huge CS Capstone \DocType \par
+            \large{Fall Term}\par
+            {\large\today}\par
+            \vspace{.5in}
+            \textbf{\Huge\CapstoneProjectName}\par
+            \vfill
+            {\large Prepared for}\par
+            \Huge \CapstoneSponsorCompany\par
+            \vspace{5pt}
+            {\Large\NameSigPair{\CapstoneSponsorPerson}\par}
+            {\large Prepared by }\par
+            Group\CapstoneTeamNumber\par
+            % 5. comment out the line below this one if you do not wish to name your team
+            %\CapstoneTeamName\par 
+            \vspace{5pt}
+            {\Large
+                \NameSigPair{\GroupMemberOne}\par
+                \NameSigPair{\GroupMemberTwo}\par
+            }
+            \vspace{20pt}
+        }
+        \begin{abstract}
+                Over the last ten weeks, our team has been working on Code3 Visionary, a project that aims to predict emergency services need in a given time and location. 
+                Fall Term has involved extensive documentation, laying the groundwork for what we aim to accomplish over the remainder of the year.
+                In addition, we have been working on project-specific tasks that will aid in the development of our project going forward.
+                This document summarizes our accomplishments, challenges, and where we currently stand as Fall term ends.
+        \end{abstract}
+    \end{singlespace}
+\end{titlepage}
+\newpage
+\pagenumbering{arabic}
+\tableofcontents
+% 7. uncomment this (if applicable). Consider adding a page break.
+%\listoffigures
+%\listoftables
+\clearpage
+
+% 8. now you write!
+\section{Introduction}
+\begin{singlespace}
+Our project, Code3 Visionary (C3V), is an application designed to predict how many emergency calls, and what types of emergency calls, will occur in a given time and place. 
+C3V involves gathering data, researching and implementing machine learning algorithms, building an API, and building a minimal user interface that can display C3V's results. 
+Our project is unorthodox for the Senior Design class, as we will be working on all aspects of the application with employees at Levrum, rather than a discrete aspect of the project. 
+
+The remainder of this document summarizes the work we accomplished over Fall Term. 
+Section \ref{weekly_summ} provides a week-by-week summary of our activities. 
+Section \ref{retro} is our overall assessment of the term, including what we felt went well and what needs improvement.
+
+\end{singlespace}
+
+\section{Weekly Summaries} \label{weekly_summ}
+\begin{singlespace}
+\subsection{Week One}
+Week One was a class preparation week. We individually looked over our options for projects and submitted our project preferences. 
+Both of us chose C3V as our first choice for two reasons. 
+First, having little to minimal experience with machine learning, we were both interested in exploring the field and wanting to come out with a better understanding.
+Second, we both wanted a challenging project that would help us to explore the practical application alongside professionals in the field. 
+Knowing that C3V would be a long term project and being able to work with professionals in the field, gave us the motivation to tackle this project.
+
+\subsection{Week Two}
+We received our project assignments on October 3rd, 2017.
+We hadn't met before, so we immediately got together and introduced ourselves. 
+We then contacted our company, Levrum, and set up a meeting.
+
+On Thursday, we met with our main point of contact, Levrum's Co-Founder and VP of Product Development, Carl Niedner. 
+Also present was Co-Founder and VP of Engineering, Chester Ornes, as well as the CEO and President, Ofer Heyman. 
+We learned that going forward, we would be working closely with Carl and Chester to develop various aspects of C3V.
+
+The meeting was productive and informative. 
+The main topic was the project goals. 
+Most of what we discussed is summarized in our Problem Statement, which we began working on after our meeting. 
+Carl and Chester also assigned us a warm up project to assess our coding style and abilities.
+
+The task, which we have continued to call the "Warm Up Project", involved developing a program to compare actual and generated emergency call logs. 
+The program takes as input text files of emergency call logs and displays bins of the call logs by location, call type, and time and also computes the difference between actual and generated calls and the percent error. 
+We were to report back with an estimated time to complete the task in Week Three.
+
+\subsection{Week Three}
+We continued to work individually on our Problem Statements over the weekend and the beginning of Week 3, before turning them in. 
+Additionally, we created our Github repository for class files and for version control on the Warm Up Project. 
+We estimated that the project would take us two weeks and let Carl know on Tuesday, as we had agreed.
+After splitting up some of the initial work on the project, we agreed to meet in Week 4 to combine our progress and do some pair programming.
+We agreed on a no-so-creative-yet-nonetheless-awesome group name: The Visionaries.
+
+\subsection{Week Four}
+Week Four mostly consisted of working on our combined problem statement and the Warm Up Project.
+We attended office hours for the problem statement to ensure we were meeting the goals of the document.
+We also emailed Carl and Chester to let them know we were ready to set up an appointment for a sprint review of our Warm Up Project.
+
+\subsection{Week Five}
+The Warm Up Project was a success.
+We reviewed our code and results with Carl and Chester, and they stated they were happy and impressed with our solution.
+They asked us to ensure the documentation was thorough and to change the output format to a CSV file because they wanted to use the code for evaluating the predictive models we generate during future work on C3V.
+
+They also gave us another task to work on over the next three weeks. 
+We were assigned to build a tool to obtain data from the United States Census, such as population, median income, and average building age, for Charlotte, NC over for every year since 2005.
+The tool, which we call the Census API Project, was to output these data to a CSV file.
+
+During this week, we spent a lot of time working on our Requirements Document. 
+It was becoming clear at this point that our project was going to progress somewhat differently from the class format.
+
+\subsection{Week Six} \label{week6}
+Though we started our next sprint with Levrum in Week 6 by putting the finishing touches on the Warm Up Project, Week Six consisted mostly of work on documentation.
+
+As we continued to work on our Requirements Document, we were concerned that we would not have a well-defined module of the project, as the document specifications asked for.
+Levrum is a start up and has a vision of what they want to accomplish, but the founders remain flexible on how to accomplish it.
+They are not committed to any particular method of implementing their plan, and as C3V is Levrum's product, they have the final say in how it is developed.
+
+We met with both instructors about our concern, and we came to an agreement that we would complete all documents this term under the assumption that we would be completing the entirety of the project on our own.
+Any unknown items would be researched and given a best-guess as to how they would be implemented.
+As the year progresses, we will revise our documents to reflect the work that we have done as a group.
+
+We completed the Requirements Document after receiving this advice, and Carl signed off on our final copy.
+
+\subsection{Week Seven}
+We began work in Week Seven on the Census API Project and found it to be more challenging than we anticipated.
+The U.S. Census's API is not well-documented;
+some of the examples in their documentation do not even work.
+We were hoping to develop a tool that would be able to obtain the requested data from any time and location, but we ran out of time.
+However, we were able to obtain what Carl and Chester asked for, which was data for Charlotte, NC.
+
+We also corresponded with Carl via email regarding topics for our Technology Review document.
+Since some of the implementation details of our project are not yet defined (see Section \ref{week6}), we hoped to do some useful research for Levrum while completing our document.
+
+\subsection{Week Eight}
+We met with Carl and Chester this week to discuss our Census API Project. 
+Although we did not have time to make the application as versatile as we wanted, Carl and Chester both said we actually got further than they thought we would.
+They asked us to continue on the Census API Project for the next sprint.
+We were instructed to get down to the granularity of Census tract, rather than returning data for a whole City. 
+A lower priority task for this sprint is to make the application more versatile so it can return any Census tract from any state.
+
+The majority of our work this week, however, was on our individual Technology Reviews.
+We continued to communicate with Carl about technologies we were researching and considering for C3V, and turned in our documents at the end of the week.
+
+\subsection{Week Nine}
+The main focus of Week Nine was our Design Document.
+We agreed we would submit a rough draft for early review on Friday.
+We worked on our individual sections and both contributed to shared portions, such as the introduction and conclusion.
+After submitting our rough draft, we sent a copy to Carl, as well.
+Kirsten and Carl both sent a few suggestions for the final draft.
+
+Although we did spend considerable time on the Design Document, we both had commitments for Thanksgiving weekend, so this week was less productive than other weeks.
+
+\subsection{Week Ten}
+We continued to focus on documentation during Week Ten. We went to the open office hours event to read through some Design Documents from previous years, and asked questions.
+We spent time implementing the new ideas and consolidating our document so that each section was consistent.
+For example, Kien was using future tense in his sections, and Brian was using past tense.
+We submitted our Design Document Thursday, concluding our work, except this Progress Report and the accompanying presentation, for the term.
+
+As of the end of Week 10, we have not been able to work on the second iteration of the Census API Project. 
+We are still committed to completing it by Friday of Week 11, which is our final meeting with Levrum before Winter Break.
+We will begin work on the project after turning in our Progress Report and presentation.
+\end{singlespace}
+
+\section{Overview and Concluding Thoughts} \label{retro}
+\begin{singlespace}
+    Our project so far has been successful.
+    Carl and Chester have continuously expressed that they are happy with our work on the project, our communication, and our writing abilities in our class documentation.
+    We are, likewise, enjoying working with Carl and Chester, and we are excited to take our next steps in the project.
+    
+    Except for the uncertainty mentioned in Section \ref{week6}, we have not encountered any notable problems at this point.
+    This lack of problems is likely due to our aligned goals and our consistent communication.
+    We proactively seek feedback from the instructors and our TA, Daniel Lin, to ensure we are fulfilling our class requirements.
+    Likewise, we meet with Levrum every two to three weeks and correspond via email in between meetings.
+    We both continue to strive to exceed expectations for the class and for Levrum.
+    Table \ref{tab:Retro} itemizes our retrospective of the term, including what went well and how we plan to improve for Winter Term.
+
+        \begin{center}
+        \captionof{table}{\textbf{Retrospective Items}} \label{tab:Retro}
+        \begin{singlespace}
+        \begin{tabular}{ |p{0.3\linewidth}|p{0.3\linewidth}|p{0.3\linewidth}| }
+        \hline
+           \textbf{Positives}
+         & \textbf{Deltas}
+         & \textbf{Actions}
+         \\
+         \hline
+         %POSITIVE
+         \tabitem We share a goal to do well in the project and the class. 
+         &%Delta
+         \tabitem Aspects of the project design plan are not yet defined or subject to change.
+         &%Change
+         \tabitem Continue to revise documents to reflect our contribution to C3V.
+         \\
+         
+         %POSITIVE
+         \tabitem We are communicating well with each other and with Levrum.
+         &%Delta
+         \tabitem We both lack experience with machine learning, which is the next phase of our project
+         &%Change
+         \tabitem We will work on our project over Winter Break, focusing on increasing our knowledge of machine learning. 
+         \\ 
+         
+         %POSITIVE
+        \tabitem We have enjoyed each task from Levrum. 
+         &%Delta
+         \tabitem We have had to cancel some group meetings (not client meetings) due to school events.
+         &%Change
+         \tabitem Find a time that will work as a backup plan if an event occurs during our regular meeting time.
+         \\
+         
+         %POSITIVE
+         \tabitem We have met or exceeded expectations on all of our tasks for Levrum.
+         &%Delta
+         \tabitem We have run into some difficulties combining our individual work for our projects.
+         &%Change
+         \tabitem Clearly define the interaction between each others' components (what input/output is expected) when splitting up work.
+         \\ 
+         
+        \hline
+        \end{tabular}
+        \end{singlespace}
+        \end{center}
+
+\end{singlespace}
+% REFERENCES
+%\newpage    
+%\bibliography{ProgressRepRef}{}
+%\bibliographystyle{ieeetr}
+
+\end{document}
+

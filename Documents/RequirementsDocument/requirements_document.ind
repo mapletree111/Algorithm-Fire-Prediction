@@ -1,0 +1,48 @@
+\markright{INDEX}
+
+\begin{theindex}
+\thispagestyle{headings}
+{\bf A}\nopagebreak%
+ \indexspace\nopagebreak%
+  \item analysis
+    \subitem what-if, 2
+  \item audience, 2
+
+  \indexspace
+{\bf C}\nopagebreak%
+ \indexspace\nopagebreak%
+  \item characteristics
+    \subitem users, 4
+  \item Code3 Strategist, 2
+  \item constraints, 4, 6
+
+  \indexspace
+{\bf D}\nopagebreak%
+ \indexspace\nopagebreak%
+  \item dependencies, 4
+
+  \indexspace
+{\bf P}\nopagebreak%
+ \indexspace\nopagebreak%
+  \item performance, 5
+  \item predictive models, 2
+  \item purpose, 2
+
+  \indexspace
+{\bf S}\nopagebreak%
+ \indexspace\nopagebreak%
+  \item software attributes, 6
+  \item stretch goal, 6
+
+  \indexspace
+{\bf T}\nopagebreak%
+ \indexspace\nopagebreak%
+  \item testing, 6
+
+  \indexspace
+{\bf U}\nopagebreak%
+ \indexspace\nopagebreak%
+  \item user interface, 2, 5
+  \item user stories, 3
+
+\end{theindex}

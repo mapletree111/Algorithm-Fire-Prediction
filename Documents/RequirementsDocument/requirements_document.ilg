@@ -1,0 +1,7 @@
+This is makeindex, version 2.15 [TeX Live 2013] (kpathsea + Thai support).
+Scanning style file ./lou3.ist...........done (11 attributes redefined, 0 ignored).
+Scanning input file requirements_document.idx....done (17 entries accepted, 0 rejected).
+Sorting entries....done (68 comparisons).
+Generating output file requirements_document.ind....done (48 lines written, 0 warnings).
+Output written in requirements_document.ind.
+Transcript written in requirements_document.ilg.

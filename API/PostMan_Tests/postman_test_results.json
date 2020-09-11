@@ -1,0 +1,527 @@
+{
+	"id": "5050fa74-1777-4374-bd2f-1c0a650bff1a",
+	"name": "The Visionary API",
+	"allTests": [],
+	"timestamp": "2018-05-09T23:24:29.601Z",
+	"collection_id": "a8c2de30-32e8-4280-a311-85b522e86ceb",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "b51a06c0-d4e0-4b15-a98a-bd6e92c048df",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "a8c2de30-32e8-4280-a311-85b522e86ceb",
+		"name": "The Visionary API",
+		"description": "",
+		"auth": null,
+		"events": null,
+		"variables": [],
+		"order": [
+			"5cb4f814-1e04-4e8c-937c-2aa01fc582d8",
+			"5e1e96c2-9c33-41cd-b4f8-24277882f099",
+			"f61ef2f4-874e-4855-9dd7-3a1fbc223c75",
+			"5de4dc2a-12f6-4b8e-9332-1702da2ebc48",
+			"02ae589a-4882-4854-972d-1b6e65e45c54",
+			"57ac776f-d5c9-4806-8a79-259c02f8ce99"
+		],
+		"folders_order": [],
+		"owner": "3570802",
+		"permissions": {},
+		"favorite": true,
+		"shared": false,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [
+		{
+			"key": "GistNum",
+			"value": "1",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "gist_id",
+			"value": "1c769b3508a60e0dcaa17ccf9d3f6b76",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "gistnum",
+			"value": 0,
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "numBoat",
+			"value": 0,
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "boat_id",
+			"value": "ahFzfmtpZW4tdHJhbi1jczQ5NnImCxIEQm9hdCILcGFyZW50X2JvYXQMCxIEQm9hdBiAgICAoJKfCgw",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "slip_id",
+			"value": "ahFzfmtpZW4tdHJhbi1jczQ5NnImCxIEU2xpcCILcGFyZW50X3NsaXAMCxIEU2xpcBiAgICAwKuGCgw",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "boat_id2",
+			"value": "ahFzfmtpZW4tdHJhbi1jczQ5NnImCxIEQm9hdCILcGFyZW50X2JvYXQMCxIEQm9hdBiAgICAoI6BCgw",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "boat_id3",
+			"value": "ahFzfmtpZW4tdHJhbi1jczQ5NnImCxIEQm9hdCILcGFyZW50X2JvYXQMCxIEQm9hdBiAgICAoJmQCgw",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "slip_id2",
+			"value": "ahFzfmtpZW4tdHJhbi1jczQ5NnImCxIEU2xpcCILcGFyZW50X3NsaXAMCxIEU2xpcBiAgICAwN-XCgw",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "slip_id3",
+			"value": "ahFzfmtpZW4tdHJhbi1jczQ5NnImCxIEU2xpcCILcGFyZW50X3NsaXAMCxIEU2xpcBiAgICAoMSOCgw",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "newCharacter",
+			"value": "ahFzfmtpZW4tdHJhbi1jczQ5NnIVCxIIU3RhcldhcnMYgICAgJnngwoM",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "userID",
+			"value": "105902753149097732832",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "oldCharacter",
+			"value": "ahFzfmtpZW4tdHJhbi1jczQ5NnIVCxIIU3RhcldhcnMYgICAgLqojgoM",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "num_entry_b",
+			"value": "418",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "entry_id",
+			"value": "ahBzfmNvZGUzdmlzaW9uYXJ5chkLEgxwcmVkaWN0Q2FsbHMYgICAgPzilwoM",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "entry_callcount",
+			"value": "150",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "entry_year",
+			"value": "2000",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "entry_cause",
+			"value": "test",
+			"enabled": true,
+			"type": "text"
+		},
+		{
+			"key": "entry_location",
+			"value": "10001",
+			"enabled": true,
+			"type": "text"
+		}
+	],
+	"results": [
+		{
+			"name": "Check using the normal get request",
+			"id": "5cb4f814-1e04-4e8c-937c-2aa01fc582d8",
+			"url": "https://code3visionary.appspot.com/calls",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Check status code is 200",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Check status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"1178"
+			],
+			"allTests": [
+				{
+					"Check status code is 200": true
+				}
+			],
+			"time": "1178",
+			"totalRequestTime": "1178",
+			"iterationResults": {}
+		},
+		{
+			"name": "Test adding entry",
+			"id": "5e1e96c2-9c33-41cd-b4f8-24277882f099",
+			"url": "https://code3visionary.appspot.com/calls",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Status code is 200",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"538"
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			],
+			"time": "538",
+			"totalRequestTime": "538",
+			"iterationResults": {}
+		},
+		{
+			"name": "Check if new entry increase database size",
+			"id": "f61ef2f4-874e-4855-9dd7-3a1fbc223c75",
+			"url": "https://code3visionary.appspot.com/calls",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Check num of entries is bigger",
+				"status": "pass"
+			},
+			"testPassFailCounts": {
+				"Check num of entries is bigger": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"1050"
+			],
+			"allTests": [
+				{
+					"Check num of entries is bigger": true
+				}
+			],
+			"time": "1050",
+			"totalRequestTime": "1050",
+			"iterationResults": {}
+		},
+		{
+			"name": "Check new entry",
+			"id": "5de4dc2a-12f6-4b8e-9332-1702da2ebc48",
+			"url": "https://code3visionary.appspot.com/calls/ahBzfmNvZGUzdmlzaW9uYXJ5chkLEgxwcmVkaWN0Q2FsbHMYgICAgIC5hAoM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"name": "Check id",
+				"status": "pass",
+				"Check cause": true,
+				"Check location": true,
+				"Check year": true,
+				"Check callcount": true
+			},
+			"testPassFailCounts": {
+				"Check id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check cause": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check location": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check year": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check callcount": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"940"
+			],
+			"allTests": [
+				{
+					"Check id": true,
+					"Check cause": true,
+					"Check location": true,
+					"Check year": true,
+					"Check callcount": true
+				}
+			],
+			"time": "940",
+			"totalRequestTime": "940",
+			"iterationResults": {}
+		},
+		{
+			"name": "Delete new entry",
+			"id": "02ae589a-4882-4854-972d-1b6e65e45c54",
+			"url": "https://code3visionary.appspot.com/calls/ahBzfmNvZGUzdmlzaW9uYXJ5chkLEgxwcmVkaWN0Q2FsbHMYgICAgIC5hAoM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {},
+			"times": [
+				"257"
+			],
+			"allTests": [
+				{}
+			],
+			"time": "257",
+			"totalRequestTime": "257",
+			"iterationResults": {}
+		},
+		{
+			"name": "Check if entry exists",
+			"id": "57ac776f-d5c9-4806-8a79-259c02f8ce99",
+			"url": "https://code3visionary.appspot.com/calls/ahBzfmNvZGUzdmlzaW9uYXJ5chkLEgxwcmVkaWN0Q2FsbHMYgICAgIC5hAoM",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"name": "Status code is 400",
+				"status": "pass",
+				"Response Message": true
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response Message": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"997"
+			],
+			"allTests": [
+				{
+					"Status code is 400": true,
+					"Response Message": true
+				}
+			],
+			"time": "997",
+			"totalRequestTime": "997",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 10,
+	"totalFail": 0,
+	"totalTime": 4960,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Check using the normal get request",
+			"id": "5cb4f814-1e04-4e8c-937c-2aa01fc582d8",
+			"url": "https://code3visionary.appspot.com/calls",
+			"time": "2018-05-09T23:24:29.601Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Check status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Test adding entry",
+			"id": "5e1e96c2-9c33-41cd-b4f8-24277882f099",
+			"url": "https://code3visionary.appspot.com/calls",
+			"time": "2018-05-09T23:24:29.601Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Check if new entry increase database size",
+			"id": "f61ef2f4-874e-4855-9dd7-3a1fbc223c75",
+			"url": "https://code3visionary.appspot.com/calls",
+			"time": "2018-05-09T23:24:29.601Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Check num of entries is bigger": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Check new entry",
+			"id": "5de4dc2a-12f6-4b8e-9332-1702da2ebc48",
+			"url": "https://code3visionary.appspot.com/calls/ahBzfmNvZGUzdmlzaW9uYXJ5chkLEgxwcmVkaWN0Q2FsbHMYgICAgIC5hAoM",
+			"time": "2018-05-09T23:24:29.601Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"Check id": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check cause": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check location": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check year": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Check callcount": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Delete new entry",
+			"id": "02ae589a-4882-4854-972d-1b6e65e45c54",
+			"url": "https://code3visionary.appspot.com/calls/ahBzfmNvZGUzdmlzaW9uYXJ5chkLEgxwcmVkaWN0Q2FsbHMYgICAgIC5hAoM",
+			"time": "2018-05-09T23:24:29.601Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {}
+		},
+		{
+			"name": "Check if entry exists",
+			"id": "57ac776f-d5c9-4806-8a79-259c02f8ce99",
+			"url": "https://code3visionary.appspot.com/calls/ahBzfmNvZGUzdmlzaW9uYXJ5chkLEgxwcmVkaWN0Q2FsbHMYgICAgIC5hAoM",
+			"time": "2018-05-09T23:24:29.601Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response Message": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
